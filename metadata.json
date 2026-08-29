@@ -1,0 +1,6 @@
+{
+  "name": "Prawar POS",
+  "description": "Ultra-fast, touch-friendly restaurant POS & table-ordering system featuring official 18-category menu, pizza size variants, dietary filters, instant 86 stock toggles, and live KOT thermal workflow.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

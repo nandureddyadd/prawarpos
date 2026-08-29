@@ -1,0 +1,813 @@
+import { MenuCategory, MenuItem, MenuItemAddon } from '../types';
+
+export const STANDARD_ADDONS: MenuItemAddon[] = [
+  { id: 'addon-cheese', name: 'Extra Cheese Topping', price: 40 },
+  { id: 'addon-chicken', name: 'Extra Chicken Topping', price: 40 },
+  { id: 'addon-veg', name: 'Saute Vegetable Topping', price: 40 },
+  { id: 'addon-egg', name: 'Double Egg Topping', price: 40 },
+];
+
+export const RESTAURANT_CATEGORIES: MenuCategory[] = [
+  { id: 'cat-pizza', name: 'Pizza', order: 1 },
+  { id: 'cat-sandwiches', name: 'Sandwiches', order: 2 },
+  { id: 'cat-pasta', name: 'Pasta', order: 3 },
+  { id: 'cat-quesadilla', name: 'Quesadilla', order: 4 },
+  { id: 'cat-garlic-bread', name: 'Garlic Bread', order: 5 },
+  { id: 'cat-wraps', name: 'Wraps', order: 6 },
+  { id: 'cat-juices', name: 'Juices', order: 7 },
+  { id: 'cat-milkshakes', name: 'Milkshakes', order: 8 },
+  { id: 'cat-falooda', name: 'Falooda', order: 9 },
+  { id: 'cat-lassi', name: 'Lassi', order: 10 },
+  { id: 'cat-fizz', name: 'Fizz', order: 11 },
+  { id: 'cat-coolers', name: 'Coolers', order: 12 },
+  { id: 'cat-cold-coffee', name: 'Cold Coffee', order: 13 },
+  { id: 'cat-smoothies', name: 'Smoothies', order: 14 },
+  { id: 'cat-desserts', name: 'Desserts', order: 15 },
+  { id: 'cat-white-fog-specials', name: 'White Fog Specials', order: 16 },
+  { id: 'cat-ice-cream', name: 'Ice Cream', order: 17 },
+  { id: 'cat-mojitos', name: 'Mojitos', order: 18 },
+];
+
+export const RESTAURANT_MENU_ITEMS: MenuItem[] = [
+  // =========================================================================
+  // 1. PIZZA (VEG)
+  // =========================================================================
+  {
+    id: 'pza-margherita',
+    categoryId: 'cat-pizza',
+    name: 'Margherita Pizza',
+    price: 215,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'MP',
+    variants: [
+      { id: 'pza-margherita-reg', name: 'Regular', price: 215 },
+      { id: 'pza-margherita-large', name: 'Large', price: 316 },
+      { id: 'pza-margherita-xl', name: 'XL', price: 410 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-veg-garden',
+    categoryId: 'cat-pizza',
+    name: 'Veg Garden Pizza',
+    price: 220,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'VGP',
+    variants: [
+      { id: 'pza-veg-garden-reg', name: 'Regular', price: 220 },
+      { id: 'pza-veg-garden-large', name: 'Large', price: 325 },
+      { id: 'pza-veg-garden-xl', name: 'XL', price: 445 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-corn-chilli',
+    categoryId: 'cat-pizza',
+    name: 'Corn & Chilli Pizza',
+    price: 230,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CCP',
+    variants: [
+      { id: 'pza-corn-chilli-reg', name: 'Regular', price: 230 },
+      { id: 'pza-corn-chilli-large', name: 'Large', price: 345 },
+      { id: 'pza-corn-chilli-xl', name: 'XL', price: 470 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-tandoori-paneer',
+    categoryId: 'cat-pizza',
+    name: 'Tandoori Paneer Pizza',
+    price: 265,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'TPP',
+    variants: [
+      { id: 'pza-tandoori-paneer-reg', name: 'Regular', price: 265 },
+      { id: 'pza-tandoori-paneer-large', name: 'Large', price: 390 },
+      { id: 'pza-tandoori-paneer-xl', name: 'XL', price: 505 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-fresh-paneer',
+    categoryId: 'cat-pizza',
+    name: 'Fresh Paneer Pizza',
+    price: 265,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'FPP',
+    variants: [
+      { id: 'pza-fresh-paneer-reg', name: 'Regular', price: 265 },
+      { id: 'pza-fresh-paneer-large', name: 'Large', price: 390 },
+      { id: 'pza-fresh-paneer-xl', name: 'XL', price: 480 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-bbq-dark-paneer',
+    categoryId: 'cat-pizza',
+    name: 'BBQ Dark Paneer Pizza',
+    price: 265,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'BDPP',
+    variants: [
+      { id: 'pza-bbq-dark-paneer-reg', name: 'Regular', price: 265 },
+      { id: 'pza-bbq-dark-paneer-large', name: 'Large', price: 390 },
+      { id: 'pza-bbq-dark-paneer-xl', name: 'XL', price: 480 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+
+  // 1. PIZZA (NON-VEG)
+  {
+    id: 'pza-grilled-chicken',
+    categoryId: 'cat-pizza',
+    name: 'Grilled Chicken Pizza',
+    price: 265,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'GCP',
+    variants: [
+      { id: 'pza-grilled-chicken-reg', name: 'Regular', price: 265 },
+      { id: 'pza-grilled-chicken-large', name: 'Large', price: 390 },
+      { id: 'pza-grilled-chicken-xl', name: 'XL', price: 480 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-bbq-chicken',
+    categoryId: 'cat-pizza',
+    name: 'BBQ Chicken Pizza',
+    price: 265,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'BCP',
+    variants: [
+      { id: 'pza-bbq-chicken-reg', name: 'Regular', price: 265 },
+      { id: 'pza-bbq-chicken-large', name: 'Large', price: 390 },
+      { id: 'pza-bbq-chicken-xl', name: 'XL', price: 480 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-chicken-loaded',
+    categoryId: 'cat-pizza',
+    name: 'Chicken Loaded Pizza',
+    price: 290,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'CLP',
+    variants: [
+      { id: 'pza-chicken-loaded-reg', name: 'Regular', price: 290 },
+      { id: 'pza-chicken-loaded-large', name: 'Large', price: 425 },
+      { id: 'pza-chicken-loaded-xl', name: 'XL', price: 530 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-tandoori-chicken',
+    categoryId: 'cat-pizza',
+    name: 'Tandoori Chicken Pizza',
+    price: 265,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'TCP',
+    variants: [
+      { id: 'pza-tandoori-chicken-reg', name: 'Regular', price: 265 },
+      { id: 'pza-tandoori-chicken-large', name: 'Large', price: 390 },
+      { id: 'pza-tandoori-chicken-xl', name: 'XL', price: 480 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-chicken-pepperoni',
+    categoryId: 'cat-pizza',
+    name: 'Chicken Pepperoni Pizza',
+    price: 290,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'CPP',
+    variants: [
+      { id: 'pza-chicken-pepperoni-reg', name: 'Regular', price: 290 },
+      { id: 'pza-chicken-pepperoni-large', name: 'Large', price: 425 },
+      { id: 'pza-chicken-pepperoni-xl', name: 'XL', price: 530 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-mexican-chicken',
+    categoryId: 'cat-pizza',
+    name: 'Mexican Chicken Pizza',
+    price: 290,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'MCP',
+    variants: [
+      { id: 'pza-mexican-chicken-reg', name: 'Regular', price: 290 },
+      { id: 'pza-mexican-chicken-large', name: 'Large', price: 425 },
+      { id: 'pza-mexican-chicken-xl', name: 'XL', price: 530 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+
+  // 1. PIZZA (HALF & HALF — Large & XL Only)
+  {
+    id: 'pza-half-tandoori-paneer-chicken',
+    categoryId: 'cat-pizza',
+    name: 'Tandoori Paneer & Tandoori Chicken',
+    price: 415,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'H-TPTC',
+    description: 'Half & Half Pizza (Large / XL only)',
+    variants: [
+      { id: 'pza-half-tandoori-large', name: 'Large', price: 415 },
+      { id: 'pza-half-tandoori-xl', name: 'XL', price: 520 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-half-bbq-paneer-chicken',
+    categoryId: 'cat-pizza',
+    name: 'BBQ Paneer & BBQ Chicken',
+    price: 415,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'H-BPBC',
+    description: 'Half & Half Pizza (Large / XL only)',
+    variants: [
+      { id: 'pza-half-bbq-large', name: 'Large', price: 415 },
+      { id: 'pza-half-bbq-xl', name: 'XL', price: 520 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-half-roasted-paneer-chicken',
+    categoryId: 'cat-pizza',
+    name: 'Roasted Paneer & Roasted Chicken',
+    price: 415,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'H-RPRC',
+    description: 'Half & Half Pizza (Large / XL only)',
+    variants: [
+      { id: 'pza-half-roasted-large', name: 'Large', price: 415 },
+      { id: 'pza-half-roasted-xl', name: 'XL', price: 520 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pza-half-corn-chilli-chicken-loaded',
+    categoryId: 'cat-pizza',
+    name: 'Corn & Chilli + Chicken Loaded',
+    price: 415,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'H-CCCL',
+    description: 'Half & Half Pizza (Large / XL only)',
+    variants: [
+      { id: 'pza-half-corn-large', name: 'Large', price: 415 },
+      { id: 'pza-half-corn-xl', name: 'XL', price: 520 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 2. THE SANDWICH SCENE
+  // =========================================================================
+  // Veg
+  {
+    id: 'sdw-classic-veg',
+    categoryId: 'cat-sandwiches',
+    name: 'Classic Veg Sandwich',
+    price: 149,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CVS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-corn-softy',
+    categoryId: 'cat-sandwiches',
+    name: 'Corn Softy Sandwich',
+    price: 155,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CSS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-tandoori-paneer',
+    categoryId: 'cat-sandwiches',
+    name: 'Tandoori Paneer Sandwich',
+    price: 180,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'TPS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-classic-paneer',
+    categoryId: 'cat-sandwiches',
+    name: 'Classic Paneer Sandwich',
+    price: 179,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CPS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-dark-paneer',
+    categoryId: 'cat-sandwiches',
+    name: 'Dark Paneer Sandwich',
+    price: 179,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'DPS',
+    addons: STANDARD_ADDONS,
+  },
+  // Non-Veg
+  {
+    id: 'sdw-peri-peri-roasted-chicken',
+    categoryId: 'cat-sandwiches',
+    name: 'Peri Peri Roasted Chicken Sandwich',
+    price: 175,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'PPRCS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-tandoori-chicken',
+    categoryId: 'cat-sandwiches',
+    name: 'Tandoori Chicken Sandwich',
+    price: 180,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'TCS',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'sdw-bbq-chicken',
+    categoryId: 'cat-sandwiches',
+    name: 'BBQ Chicken Sandwich',
+    price: 210,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'BCS',
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 3. PASTA LA VISTA (VEG / NON-VEG)
+  // =========================================================================
+  {
+    id: 'pst-alfredo',
+    categoryId: 'cat-pasta',
+    name: 'Alfredo Pasta',
+    price: 210,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'AP',
+    variants: [
+      { id: 'pst-alfredo-veg', name: 'Veg', price: 210 },
+      { id: 'pst-alfredo-nonveg', name: 'Non-Veg', price: 240 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pst-red-sauce',
+    categoryId: 'cat-pasta',
+    name: 'Red Sauce Pasta',
+    price: 210,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'RSP',
+    variants: [
+      { id: 'pst-red-sauce-veg', name: 'Veg', price: 210 },
+      { id: 'pst-red-sauce-nonveg', name: 'Non-Veg', price: 240 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pst-butter-masala',
+    categoryId: 'cat-pasta',
+    name: 'Butter Masala Pasta',
+    price: 210,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'BMP',
+    variants: [
+      { id: 'pst-butter-masala-veg', name: 'Veg', price: 210 },
+      { id: 'pst-butter-masala-nonveg', name: 'Non-Veg', price: 240 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pst-exotic-peri-peri',
+    categoryId: 'cat-pasta',
+    name: 'Exotic Peri Peri Pasta',
+    price: 210,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'EPPP',
+    variants: [
+      { id: 'pst-exotic-peri-peri-veg', name: 'Veg', price: 210 },
+      { id: 'pst-exotic-peri-peri-nonveg', name: 'Non-Veg', price: 240 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'pst-mac-and-cheese',
+    categoryId: 'cat-pasta',
+    name: 'Mac & Cheese Pasta',
+    price: 275,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'MCP',
+    variants: [
+      { id: 'pst-mac-and-cheese-veg', name: 'Veg', price: 275 },
+      { id: 'pst-mac-and-cheese-nonveg', name: 'Non-Veg', price: 305 },
+    ],
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 4. QUESADILLA STREET
+  // =========================================================================
+  {
+    id: 'qsd-veg',
+    categoryId: 'cat-quesadilla',
+    name: 'Veg Quesadilla',
+    price: 200,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'VQ',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'qsd-paneer',
+    categoryId: 'cat-quesadilla',
+    name: 'Paneer Quesadilla',
+    price: 220,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'PQ',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'qsd-chicken',
+    categoryId: 'cat-quesadilla',
+    name: 'Chicken Quesadilla',
+    price: 250,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'CQ',
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 5. GARLIC BREADS
+  // =========================================================================
+  {
+    id: 'gb-classic',
+    categoryId: 'cat-garlic-bread',
+    name: 'Garlic Bread',
+    price: 100,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'GB',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'gb-cheese',
+    categoryId: 'cat-garlic-bread',
+    name: 'Cheese Garlic Bread',
+    price: 130,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CGB',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'gb-chicken-cheese',
+    categoryId: 'cat-garlic-bread',
+    name: 'Chicken Cheese Garlic Bread',
+    price: 150,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'CCGB',
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 6. WRAP REPUBLIC
+  // =========================================================================
+  {
+    id: 'wrp-veg-green',
+    categoryId: 'cat-wraps',
+    name: 'Veg Green Wrap',
+    price: 160,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'VGW',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'wrp-paneer',
+    categoryId: 'cat-wraps',
+    name: 'Paneer Wrap',
+    price: 180,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'PW',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'wrp-chicken-red',
+    categoryId: 'cat-wraps',
+    name: 'Chicken Red Wrap',
+    price: 200,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'CRW',
+    addons: STANDARD_ADDONS,
+  },
+  {
+    id: 'wrp-protein',
+    categoryId: 'cat-wraps',
+    name: 'Protein Wrap',
+    price: 230,
+    isVeg: false,
+    isAvailable: true,
+    shortCode: 'PROW',
+    addons: STANDARD_ADDONS,
+  },
+
+  // =========================================================================
+  // 7. JUST JUICE IT — FRESH JUICES
+  // =========================================================================
+  { id: 'jce-lime', categoryId: 'cat-juices', name: 'Lime Juice', price: 50, isVeg: true, isAvailable: true, shortCode: 'LJ' },
+  { id: 'jce-mint-lime', categoryId: 'cat-juices', name: 'Mint Lime Juice', price: 50, isVeg: true, isAvailable: true, shortCode: 'MLJ' },
+  { id: 'jce-mosambi', categoryId: 'cat-juices', name: 'Mosambi', price: 80, isVeg: true, isAvailable: true, shortCode: 'MOS' },
+  { id: 'jce-pure-mosambi', categoryId: 'cat-juices', name: 'Pure Mosambi Juice', price: 100, isVeg: true, isAvailable: true, shortCode: 'PMJ' },
+  { id: 'jce-orange', categoryId: 'cat-juices', name: 'Orange (Seasonal)', price: 70, isVeg: true, isAvailable: true, shortCode: 'ORG' },
+  { id: 'jce-watermelon', categoryId: 'cat-juices', name: 'Watermelon', price: 80, isVeg: true, isAvailable: true, shortCode: 'WMJ' },
+  { id: 'jce-muskmelon', categoryId: 'cat-juices', name: 'Muskmelon (Seasonal)', price: 80, isVeg: true, isAvailable: true, shortCode: 'MMJ' },
+  { id: 'jce-mango', categoryId: 'cat-juices', name: 'Mango (Seasonal)', price: 80, isVeg: true, isAvailable: true, shortCode: 'MGJ' },
+  { id: 'jce-avocado', categoryId: 'cat-juices', name: 'Avocado', price: 140, isVeg: true, isAvailable: true, shortCode: 'AVJ' },
+  { id: 'jce-pineapple', categoryId: 'cat-juices', name: 'Pineapple', price: 80, isVeg: true, isAvailable: true, shortCode: 'PAJ' },
+  { id: 'jce-grape-black', categoryId: 'cat-juices', name: 'Grape (Black)', price: 80, isVeg: true, isAvailable: true, shortCode: 'GBJ' },
+  { id: 'jce-chiku', categoryId: 'cat-juices', name: 'Chiku (Sapota)', price: 80, isVeg: true, isAvailable: true, shortCode: 'CKJ' },
+  { id: 'jce-papaya', categoryId: 'cat-juices', name: 'Papaya', price: 80, isVeg: true, isAvailable: true, shortCode: 'PPJ' },
+  { id: 'jce-pomegranate', categoryId: 'cat-juices', name: 'Pomegranate', price: 100, isVeg: true, isAvailable: true, shortCode: 'POM' },
+  { id: 'jce-apple', categoryId: 'cat-juices', name: 'Apple', price: 120, isVeg: true, isAvailable: true, shortCode: 'APJ' },
+  { id: 'jce-mix-fruit', categoryId: 'cat-juices', name: 'Mix Fruit', price: 120, isVeg: true, isAvailable: true, shortCode: 'MFJ' },
+  { id: 'jce-dragon-fruit', categoryId: 'cat-juices', name: 'Dragon Fruit Juice', price: 120, isVeg: true, isAvailable: true, shortCode: 'DFJ' },
+
+  // =========================================================================
+  // 8. MILKSHAKE MANIA
+  // =========================================================================
+  { id: 'shk-vanilla', categoryId: 'cat-milkshakes', name: 'Vanilla Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'VMS' },
+  { id: 'shk-strawberry', categoryId: 'cat-milkshakes', name: 'Strawberry Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'SMS' },
+  { id: 'shk-banana', categoryId: 'cat-milkshakes', name: 'Banana Milkshake', price: 80, isVeg: true, isAvailable: true, shortCode: 'BMS' },
+  { id: 'shk-butterscotch', categoryId: 'cat-milkshakes', name: 'Butterscotch Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'BSMS' },
+  { id: 'shk-mango', categoryId: 'cat-milkshakes', name: 'Mango Milkshake', price: 120, isVeg: true, isAvailable: true, shortCode: 'MMS' },
+  { id: 'shk-pista', categoryId: 'cat-milkshakes', name: 'Pista Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'PMS' },
+  { id: 'shk-chocolate', categoryId: 'cat-milkshakes', name: 'Chocolate Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'CMS' },
+  { id: 'shk-tender-coconut', categoryId: 'cat-milkshakes', name: 'Tender Coconut', price: 120, isVeg: true, isAvailable: true, shortCode: 'TCMS' },
+  { id: 'shk-chiku', categoryId: 'cat-milkshakes', name: 'Chiku Milkshake', price: 100, isVeg: true, isAvailable: true, shortCode: 'CKMS' },
+  { id: 'shk-papaya-cashew', categoryId: 'cat-milkshakes', name: 'Papaya Cashew', price: 120, isVeg: true, isAvailable: true, shortCode: 'PCMS' },
+  { id: 'shk-dragon-fruit', categoryId: 'cat-milkshakes', name: 'Dragon Fruit', price: 120, isVeg: true, isAvailable: true, shortCode: 'DFMS' },
+  { id: 'shk-pomegranate', categoryId: 'cat-milkshakes', name: 'Pomegranate', price: 120, isVeg: true, isAvailable: true, shortCode: 'PMSC' },
+  { id: 'shk-apple', categoryId: 'cat-milkshakes', name: 'Apple Milkshake', price: 150, isVeg: true, isAvailable: true, shortCode: 'AMS' },
+  { id: 'shk-avocado', categoryId: 'cat-milkshakes', name: 'Avocado Milkshake', price: 160, isVeg: true, isAvailable: true, shortCode: 'AVMS' },
+  { id: 'shk-ferrero-rocker', categoryId: 'cat-milkshakes', name: 'Ferrero Rocker', price: 150, isVeg: true, isAvailable: true, shortCode: 'FRMS' },
+  { id: 'shk-dry-fruit', categoryId: 'cat-milkshakes', name: 'Dry Fruit Milkshake', price: 150, isVeg: true, isAvailable: true, shortCode: 'DFRMS' },
+  { id: 'shk-muskmelon', categoryId: 'cat-milkshakes', name: 'Muskmelon', price: 120, isVeg: true, isAvailable: true, shortCode: 'MMMS' },
+
+  // =========================================================================
+  // 9. FALOODA FIESTA
+  // =========================================================================
+  { id: 'fld-classic', categoryId: 'cat-falooda', name: 'Classic Falooda', price: 150, isVeg: true, isAvailable: true, shortCode: 'CFL' },
+  { id: 'fld-pista', categoryId: 'cat-falooda', name: 'Pista Falooda', price: 160, isVeg: true, isAvailable: true, shortCode: 'PFL' },
+  { id: 'fld-mango', categoryId: 'cat-falooda', name: 'Mango Falooda', price: 160, isVeg: true, isAvailable: true, shortCode: 'MFL' },
+  { id: 'fld-strawberry', categoryId: 'cat-falooda', name: 'Strawberry Falooda', price: 160, isVeg: true, isAvailable: true, shortCode: 'SFL' },
+  { id: 'fld-dry-fruit', categoryId: 'cat-falooda', name: 'Dry Fruit Falooda', price: 180, isVeg: true, isAvailable: true, shortCode: 'DFFL' },
+  { id: 'fld-twf-special', categoryId: 'cat-falooda', name: 'TWF Special Falooda', price: 200, isVeg: true, isAvailable: true, shortCode: 'TWFFL' },
+  { id: 'fld-butterscotch', categoryId: 'cat-falooda', name: 'Butterscotch Falooda', price: 160, isVeg: true, isAvailable: true, shortCode: 'BSFL' },
+  { id: 'fld-black-currant', categoryId: 'cat-falooda', name: 'Black Currant Falooda', price: 160, isVeg: true, isAvailable: true, shortCode: 'BCFL' },
+
+  // =========================================================================
+  // 10. LEGENDARY LASSI
+  // =========================================================================
+  { id: 'lss-sweet', categoryId: 'cat-lassi', name: 'Sweet Lassi', price: 70, isVeg: true, isAvailable: true, shortCode: 'SWL' },
+  { id: 'lss-salt', categoryId: 'cat-lassi', name: 'Salt Lassi', price: 60, isVeg: true, isAvailable: true, shortCode: 'SLL' },
+  { id: 'lss-mango', categoryId: 'cat-lassi', name: 'Mango Lassi', price: 90, isVeg: true, isAvailable: true, shortCode: 'MGL' },
+  { id: 'lss-strawberry', categoryId: 'cat-lassi', name: 'Strawberry Lassi', price: 90, isVeg: true, isAvailable: true, shortCode: 'STL' },
+  { id: 'lss-kesar-pista', categoryId: 'cat-lassi', name: 'Kesar Pista Lassi', price: 100, isVeg: true, isAvailable: true, shortCode: 'KPL' },
+  { id: 'lss-dry-fruit', categoryId: 'cat-lassi', name: 'Dry Fruit Lassi', price: 130, isVeg: true, isAvailable: true, shortCode: 'DFL' },
+  { id: 'lss-chocolate', categoryId: 'cat-lassi', name: 'Chocolate Lassi', price: 100, isVeg: true, isAvailable: true, shortCode: 'CHL' },
+
+  // =========================================================================
+  // 11. FLAVORS ON THE FIZZ
+  // =========================================================================
+  { id: 'fiz-watermelon', categoryId: 'cat-fizz', name: 'Watermelon', price: 55, isVeg: true, isAvailable: true, shortCode: 'WFZ' },
+  { id: 'fiz-black-currant', categoryId: 'cat-fizz', name: 'Black Currant', price: 55, isVeg: true, isAvailable: true, shortCode: 'BCFZ' },
+  { id: 'fiz-lychee', categoryId: 'cat-fizz', name: 'Lychee', price: 55, isVeg: true, isAvailable: true, shortCode: 'LFZ' },
+  { id: 'fiz-pineapple', categoryId: 'cat-fizz', name: 'Pineapple', price: 55, isVeg: true, isAvailable: true, shortCode: 'PAFZ' },
+  { id: 'fiz-mango', categoryId: 'cat-fizz', name: 'Mango', price: 55, isVeg: true, isAvailable: true, shortCode: 'MGFZ' },
+  { id: 'fiz-blue-fizz', categoryId: 'cat-fizz', name: 'Blue Fizz', price: 55, isVeg: true, isAvailable: true, shortCode: 'BFZ' },
+  { id: 'fiz-green-apple', categoryId: 'cat-fizz', name: 'Green Apple', price: 55, isVeg: true, isAvailable: true, shortCode: 'GAFZ' },
+  { id: 'fiz-guava', categoryId: 'cat-fizz', name: 'Guava', price: 55, isVeg: true, isAvailable: true, shortCode: 'GVFZ' },
+  { id: 'fiz-apricot', categoryId: 'cat-fizz', name: 'Apricot', price: 55, isVeg: true, isAvailable: true, shortCode: 'APFZ' },
+
+  // =========================================================================
+  // 12. BODY COOLERS / SODAS
+  // =========================================================================
+  { id: 'clr-lime-soda', categoryId: 'cat-coolers', name: 'Lime Soda', price: 60, isVeg: true, isAvailable: true, shortCode: 'LS' },
+  { id: 'clr-mint-lime-soda', categoryId: 'cat-coolers', name: 'Mint Lime Soda', price: 60, isVeg: true, isAvailable: true, shortCode: 'MLS' },
+  { id: 'clr-ginger-lime-soda', categoryId: 'cat-coolers', name: 'Ginger Lime Soda', price: 60, isVeg: true, isAvailable: true, shortCode: 'GLS' },
+  { id: 'clr-jaljeera-soda', categoryId: 'cat-coolers', name: 'Jaljeera Soda', price: 60, isVeg: true, isAvailable: true, shortCode: 'JJS' },
+  { id: 'clr-chilli-soda', categoryId: 'cat-coolers', name: 'Chilli Soda', price: 60, isVeg: true, isAvailable: true, shortCode: 'CLS' },
+  { id: 'clr-guava-freshner', categoryId: 'cat-coolers', name: 'Guava Freshner', price: 60, isVeg: true, isAvailable: true, shortCode: 'GVF' },
+  { id: 'clr-lychee-cooler', categoryId: 'cat-coolers', name: 'Lychee Cooler', price: 60, isVeg: true, isAvailable: true, shortCode: 'LCC' },
+  { id: 'clr-pineapple-lime', categoryId: 'cat-coolers', name: 'Pineapple Lime', price: 60, isVeg: true, isAvailable: true, shortCode: 'PAL' },
+  { id: 'clr-grape-lime', categoryId: 'cat-coolers', name: 'Grape Lime', price: 60, isVeg: true, isAvailable: true, shortCode: 'GPL' },
+  { id: 'clr-masala-cola', categoryId: 'cat-coolers', name: 'Masala Cola', price: 60, isVeg: true, isAvailable: true, shortCode: 'MSC' },
+
+  // =========================================================================
+  // 13. CHILL WITH COLD COFFEE
+  // =========================================================================
+  { id: 'cc-dalgona', categoryId: 'cat-cold-coffee', name: 'Dalgona Cold Coffee', price: 150, isVeg: true, isAvailable: true, shortCode: 'DCC' },
+  { id: 'cc-frappuccino', categoryId: 'cat-cold-coffee', name: 'Frappuccino Cold Coffee', price: 140, isVeg: true, isAvailable: true, shortCode: 'FCC' },
+  { id: 'cc-8pm', categoryId: 'cat-cold-coffee', name: '8PM Cold Coffee', price: 90, isVeg: true, isAvailable: true, shortCode: '8PM' },
+  { id: 'cc-twf-spl', categoryId: 'cat-cold-coffee', name: 'TWF SPL Cold Coffee', price: 180, isVeg: true, isAvailable: true, shortCode: 'TWFCC', description: 'The White Fog' },
+
+  // =========================================================================
+  // 14. SMOOTHIE RUSH
+  // =========================================================================
+  { id: 'smt-mango', categoryId: 'cat-smoothies', name: 'Mango Smoothie', price: 150, isVeg: true, isAvailable: true, shortCode: 'MGSM' },
+  { id: 'smt-papaya', categoryId: 'cat-smoothies', name: 'Papaya Smoothie', price: 150, isVeg: true, isAvailable: true, shortCode: 'PPSM' },
+  { id: 'smt-banana', categoryId: 'cat-smoothies', name: 'Banana Smoothie', price: 150, isVeg: true, isAvailable: true, shortCode: 'BNSM' },
+  { id: 'smt-apple', categoryId: 'cat-smoothies', name: 'Apple Smoothie', price: 160, isVeg: true, isAvailable: true, shortCode: 'APSM' },
+
+  // =========================================================================
+  // 15. ICE CREAM AFFAIRS / DESSERTS
+  // =========================================================================
+  { id: 'dst-fruit-bowl', categoryId: 'cat-desserts', name: 'Fruit Bowl', price: 120, isVeg: true, isAvailable: true, shortCode: 'FB' },
+  { id: 'dst-fruit-bowl-ice-cream', categoryId: 'cat-desserts', name: 'Fruit Bowl with Ice Cream', price: 160, isVeg: true, isAvailable: true, shortCode: 'FBIC' },
+  { id: 'dst-chocolate-fudge', categoryId: 'cat-desserts', name: 'Chocolate Fudge', price: 180, isVeg: true, isAvailable: true, shortCode: 'CFG' },
+  { id: 'dst-butterscotch-fudge', categoryId: 'cat-desserts', name: 'Butterscotch Fudge', price: 180, isVeg: true, isAvailable: true, shortCode: 'BSFG' },
+  { id: 'dst-brownie-vanilla', categoryId: 'cat-desserts', name: 'Brownie with Vanilla Ice Cream', price: 180, isVeg: true, isAvailable: true, shortCode: 'BVIC' },
+  { id: 'dst-death-by-chocolate', categoryId: 'cat-desserts', name: 'Death by Chocolate', price: 180, isVeg: true, isAvailable: true, shortCode: 'DBC' },
+  { id: 'dst-chocolate-fantasy', categoryId: 'cat-desserts', name: 'Chocolate Fantasy', price: 180, isVeg: true, isAvailable: true, shortCode: 'CFT' },
+  { id: 'dst-triple-sundae', categoryId: 'cat-desserts', name: 'Triple Sundae', price: 180, isVeg: true, isAvailable: true, shortCode: 'TSD' },
+  { id: 'dst-gudbud', categoryId: 'cat-desserts', name: 'Gudbud', price: 180, isVeg: true, isAvailable: true, shortCode: 'GUD' },
+  { id: 'dst-fried-ice-cream', categoryId: 'cat-desserts', name: 'Fried Ice Cream', price: 200, isVeg: true, isAvailable: true, shortCode: 'FIC' },
+  { id: 'dst-titanic-special', categoryId: 'cat-desserts', name: 'Titanic Special', price: 300, isVeg: true, isAvailable: true, shortCode: 'TTS' },
+  { id: 'dst-ice-cream-bucket', categoryId: 'cat-desserts', name: 'Ice Cream Bucket', price: 350, isVeg: true, isAvailable: true, shortCode: 'ICB' },
+  { id: 'dst-honeymoon-dreams', categoryId: 'cat-desserts', name: 'Honeymoon Dreams', price: 650, isVeg: true, isAvailable: true, shortCode: 'HMD' },
+
+  // =========================================================================
+  // 16. THE WHITE FOG SPECIALS
+  // =========================================================================
+  { id: 'wfs-pina-colada', categoryId: 'cat-white-fog-specials', name: 'Pina Colada', price: 250, isVeg: true, isAvailable: true, shortCode: 'PNC' },
+  { id: 'wfs-spl-dry-fruit-milkshake', categoryId: 'cat-white-fog-specials', name: 'SPL Dry Fruit Milkshake', price: 200, isVeg: true, isAvailable: true, shortCode: 'SDFM' },
+  { id: 'wfs-spl-chocolate-milkshake', categoryId: 'cat-white-fog-specials', name: 'SPL Chocolate Milkshake', price: 180, isVeg: true, isAvailable: true, shortCode: 'SCMS' },
+  { id: 'wfs-spl-vanilla-milkshake', categoryId: 'cat-white-fog-specials', name: 'SPL Vanilla Milkshake', price: 160, isVeg: true, isAvailable: true, shortCode: 'SVMS' },
+  { id: 'wfs-spl-strawberry-milkshake', categoryId: 'cat-white-fog-specials', name: 'SPL Strawberry Milkshake', price: 170, isVeg: true, isAvailable: true, shortCode: 'SSMS' },
+  { id: 'wfs-spl-butterscotch-milkshake', categoryId: 'cat-white-fog-specials', name: 'SPL Butterscotch Milkshake', price: 170, isVeg: true, isAvailable: true, shortCode: 'SBMS' },
+  { id: 'wfs-mango-mastani', categoryId: 'cat-white-fog-specials', name: 'Mango Mastani (Seasonal)', price: 200, isVeg: true, isAvailable: true, shortCode: 'MGM' },
+  { id: 'wfs-the-white-fog-special-falooda', categoryId: 'cat-white-fog-specials', name: 'The White Fog Special Falooda', price: 200, isVeg: true, isAvailable: true, shortCode: 'TWFF' },
+  { id: 'wfs-sizzling-brownie', categoryId: 'cat-white-fog-specials', name: 'Sizzling Brownie with Vanilla Ice Cream', price: 250, isVeg: true, isAvailable: true, shortCode: 'SBVIC' },
+  { id: 'wfs-saudi-champagne', categoryId: 'cat-white-fog-specials', name: 'Saudi Champagne', price: 350, isVeg: true, isAvailable: true, shortCode: 'SDC' },
+  { id: 'wfs-jackfruit-milkshake', categoryId: 'cat-white-fog-specials', name: 'Jackfruit Milkshake', price: 140, isVeg: true, isAvailable: true, shortCode: 'JFMS' },
+  { id: 'wfs-apricot-delight', categoryId: 'cat-white-fog-specials', name: 'Apricot Delight', price: 160, isVeg: true, isAvailable: true, shortCode: 'APDL' },
+  { id: 'wfs-fruit-custard', categoryId: 'cat-white-fog-specials', name: 'Fruit Custard', price: 120, isVeg: true, isAvailable: true, shortCode: 'FCST' },
+
+  // =========================================================================
+  // 17. SCOOP STORIES / ICE CREAM (SINGLE & DOUBLE SCOOPS)
+  // =========================================================================
+  {
+    id: 'scp-chocolate',
+    categoryId: 'cat-ice-cream',
+    name: 'Chocolate Scoop',
+    price: 75,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'CSC',
+    variants: [
+      { id: 'scp-chocolate-single', name: 'Single Scoop', price: 75 },
+      { id: 'scp-chocolate-double', name: 'Double Scoop', price: 130 },
+    ],
+  },
+  {
+    id: 'scp-vanilla',
+    categoryId: 'cat-ice-cream',
+    name: 'Vanilla Scoop',
+    price: 60,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'VSC',
+    variants: [
+      { id: 'scp-vanilla-single', name: 'Single Scoop', price: 60 },
+      { id: 'scp-vanilla-double', name: 'Double Scoop', price: 120 },
+    ],
+  },
+  {
+    id: 'scp-butterscotch',
+    categoryId: 'cat-ice-cream',
+    name: 'Butterscotch Scoop',
+    price: 75,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'BSSC',
+    variants: [
+      { id: 'scp-butterscotch-single', name: 'Single Scoop', price: 75 },
+      { id: 'scp-butterscotch-double', name: 'Double Scoop', price: 120 },
+    ],
+  },
+  {
+    id: 'scp-pista',
+    categoryId: 'cat-ice-cream',
+    name: 'Pista Scoop',
+    price: 70,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'PSC',
+    variants: [
+      { id: 'scp-pista-single', name: 'Single Scoop', price: 70 },
+      { id: 'scp-pista-double', name: 'Double Scoop', price: 120 },
+    ],
+  },
+  {
+    id: 'scp-mango',
+    categoryId: 'cat-ice-cream',
+    name: 'Mango Scoop',
+    price: 70,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'MSC',
+    variants: [
+      { id: 'scp-mango-single', name: 'Single Scoop', price: 70 },
+      { id: 'scp-mango-double', name: 'Double Scoop', price: 120 },
+    ],
+  },
+  {
+    id: 'scp-strawberry',
+    categoryId: 'cat-ice-cream',
+    name: 'Strawberry Scoop',
+    price: 60,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'STSC',
+    variants: [
+      { id: 'scp-strawberry-single', name: 'Single Scoop', price: 60 },
+      { id: 'scp-strawberry-double', name: 'Double Scoop', price: 110 },
+    ],
+  },
+  {
+    id: 'scp-blackcurrant',
+    categoryId: 'cat-ice-cream',
+    name: 'Blackcurrant Scoop',
+    price: 80,
+    isVeg: true,
+    isAvailable: true,
+    shortCode: 'BCSC',
+    variants: [
+      { id: 'scp-blackcurrant-single', name: 'Single Scoop', price: 80 },
+      { id: 'scp-blackcurrant-double', name: 'Double Scoop', price: 140 },
+    ],
+  },
+
+  // =========================================================================
+  // 18. MOJITO MADNESS (All ₹90)
+  // =========================================================================
+  { id: 'moj-mint', categoryId: 'cat-mojitos', name: 'Mint Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'MMJ' },
+  { id: 'moj-lime', categoryId: 'cat-mojitos', name: 'Lime Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'LMJ' },
+  { id: 'moj-blue-curacao', categoryId: 'cat-mojitos', name: 'Blue Curacao Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'BCM' },
+  { id: 'moj-passion-fruit', categoryId: 'cat-mojitos', name: 'Passion Fruit Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'PFM' },
+  { id: 'moj-pineapple', categoryId: 'cat-mojitos', name: 'Pineapple Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'PAM' },
+  { id: 'moj-kala-khatta', categoryId: 'cat-mojitos', name: 'Kala Khatta Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'KKM' },
+  { id: 'moj-strawberry', categoryId: 'cat-mojitos', name: 'Strawberry Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'SBM' },
+  { id: 'moj-mango', categoryId: 'cat-mojitos', name: 'Mango Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'MGMJ' },
+  { id: 'moj-green-apple', categoryId: 'cat-mojitos', name: 'Green Apple Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'GAM' },
+  { id: 'moj-kiwi', categoryId: 'cat-mojitos', name: 'Kiwi Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'KWM' },
+  { id: 'moj-mexican', categoryId: 'cat-mojitos', name: 'Mexican Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'MXM' },
+  { id: 'moj-lychee', categoryId: 'cat-mojitos', name: 'Lychee Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'LYM' },
+  { id: 'moj-raspberry', categoryId: 'cat-mojitos', name: 'Raspberry Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'RBM' },
+  { id: 'moj-custard-apple', categoryId: 'cat-mojitos', name: 'Custard Apple Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'CAM' },
+  { id: 'moj-guava', categoryId: 'cat-mojitos', name: 'Guava Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'GVM' },
+  { id: 'moj-banana', categoryId: 'cat-mojitos', name: 'Banana Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'BNM' },
+  { id: 'moj-orange', categoryId: 'cat-mojitos', name: 'Orange Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'OGM' },
+  { id: 'moj-apricot', categoryId: 'cat-mojitos', name: 'Apricot Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'APM' },
+  { id: 'moj-cherry', categoryId: 'cat-mojitos', name: 'Cherry Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'CHM' },
+  { id: 'moj-blue-berry', categoryId: 'cat-mojitos', name: 'Blue Berry Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'BBM' },
+  { id: 'moj-black-berry', categoryId: 'cat-mojitos', name: 'Black Berry Mojito', price: 90, isVeg: true, isAvailable: true, shortCode: 'BKM' },
+];
